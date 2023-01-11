@@ -5,7 +5,12 @@
 
 <!-- BC_OBNW -->
 <head>
-	<title>Home</title>
+	{% capture seo %}
+	 {% seo %}
+	 <meta name="keywords" content="{{page.keywords}}">
+	 <meta name="msvalidate.01" content="84731997131DC6D5C4CE682AF20C5C74" />
+	 {% endcapture %}
+	 {{seo | remove: "Jekyll"}}
 	<link type="text/css" href="StyleSheets/ModuleStyleSheets.css" rel="StyleSheet"/>
 	<script type="text/javascript">var jslang = 'EN';</script>
 
