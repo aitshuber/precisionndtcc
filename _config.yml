@@ -1,7 +1,7 @@
 ---
 timezone: America/Chicago
 baseurl:
-include: ['_pages', '_data','login.html','login', 'assets', 'service']
+include: ['_pages', '_data','login.html','login', 'assets', 'service', 'literature_189324']
 relative_permalinks: false
 # Your disqus shortname, entering this will enable commenting on posts
 disqus: 

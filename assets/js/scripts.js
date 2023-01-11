@@ -19,11 +19,25 @@ if (path) { // if there is a value for the varible path
     $('aside li a[href$="' + path + '"]').parent().addClass('selected');
 };
 
+// ======= On Page Load ==============================================
+	$(function () {
+    // ======= Placeholder ===========================================
+    $('input, textarea').placeholder();
 
-//=======search============//
-$('.search-icon span').click(function(){
-		$('.search-container').toggle();
+ 	// ======= Hide/Show Account Nav =====================================
+	if (_isLoggedIn) // if _isLoggedIn equals true (or 1)
+	{
+	    $(".utility-nav .uty1").css({
+	        "display": "block"
+	    });
+	} else // if _isLoggedIn does not equal true (or 0)
+	{
+	    $(".utility-nav .uty0").css({
+	        "display": "block"
+	    });
+	}
 });
+// ======= Account Nav =====================================
 
 	// When user clicks on forgot password link:
 	// Sign In form hides, Forgot password form shows
@@ -48,15 +62,14 @@ $('.search-icon span').click(function(){
     });
 
 
-$('.distributors select option').each(function() {
-  $(this).prevAll('option[value="' + this.value + '"]').remove();
-});
+//=================custom================//
+$('.post-preview').each(function(){
+   if ($(this).find('img').length) {
+        // there is an image in this div, do something...
+    }
+    else {
+        $(this).hide();
+    }
+     });
 
 
-$('.gallery-container').magnificPopup({
-  delegate: 'a', // child items selector, by clicking on it popup will open
-  type: 'image',
-  gallery:{
-    enabled:true
-  }
-});
