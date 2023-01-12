@@ -144,9 +144,7 @@ description: Precision NDT & Consulting, LLC is a Gulf Coast based company provi
         <div class="small-12 columns">
             <h2>contact us</h2>
             <p class="text-center">Fill out the form below to get in touch with us</p>
-            <form name="catwebformform62785" method="post" enctype="multipart/form-data"
-                  id="contact-form"
-            >
+            <form method="post" id="contact-us" action="/success">
                 <div class="row">
                     <div class="medium-4 columns">
                         <input type="text" name="name" name="FirstName" id="FirstName" placeholder="Full Name" maxlength="200" required>
@@ -163,48 +161,16 @@ description: Precision NDT & Consulting, LLC is a Gulf Coast based company provi
                     </div>
                     <div class="clearfix"></div>
                     <div class="submit-button">
-                        <input type="submit" class="g-recaptcha" data-sitekey="6LezUKMaAAAAAAUWYLUhHAMJEGtt-MUGfid8seG8"
-                               data-callback="submitContactForm" value="Submit" id="catwebformbutton">
+                        <input type="hidden" name="inbox_key" value="Precision-Form">
+                          <input type="hidden" name="_to" value="carlos@accoladesit.com">
+                          <input type="hidden" name="_cc" value="carlos@accoladesit.com">
+                          <input type="text" name="_gotcha" style="display: none;">
+                          <input type="submit" value="Submit">
+                        <input type="submit" value="Submit">
                     </div>
                 </div>
             </form>
-            <script>
-                function submitContactForm(event) {
-                    var form = new FormData(document.getElementById('contact-form'));
-                    $.ajax({
-                        headers: {'X-CSRFTOken': '43DiZuaNIQL3jPIBqBNxdBZ4VHwlK9wvWDkuszIr4kQgDoxAQHiC3WuOkbHChPxq'},
-                        enctype: 'multipart/form-data',
-                        url: '/',
-                        contentType: false,
-                        processData: false,
-                        type: 'POST',
-                        data: form,
-                        success: function (result) {
-                            if (result.status === 200) {
-                                Swal.fire("Form Submitted!", "Your message has been sent to us", "success")
-                            } else {
-                                let errors = ""
-                                for (var i = 0; i < result.errors.length; i++) {
-                                    errors += `<li>${result.errors[i]}</li>`;
-                                }
-                                Swal.fire({
-                                    "icon": "warning",
-                                    "title": "Invalid Form",
-                                    "html": `These fields are either invalid or blank: <ul>${errors}<ul>`
-                                });
-                            }
-                        }
-                        ,
-                        error: function (err) {
-                            Swal.fire({
-                                icon: "error",
-                                title: "Form Submission Failure",
-                                html: "Something went wrong, please try again later"
-                            })
-                        }
-                    })
-                }
-            </script>
+          
             <div class="contact-info">
                 <div class="large-4 medium-4 columns call-now">
                     <p><em class="fa fa-phone"></em> Call Us Now</p>
